@@ -1,0 +1,77 @@
+site_name: My portfolio # Название сайта
+site_description: Тестовое портфолио # Описание сайта, добавляется в meta-теги
+theme: # Тема сайта, информация о ее параметрах
+  name: material # Название темы
+  logo: images/logo.svg # Ссылка на логотип сайта, логотип добавляется в папку `docs/images`
+  font:
+    text: Roboto # Шрифт текста
+    code: Roboto Mono # Шрифт для текста кода
+  language: ru # Язык
+  palette: # Настройки светлой и тёмной тем
+    # Настройки светлой темы
+    - scheme: default 
+      toggle:
+        icon: material/weather-sunny # Иконка для активации светлой темы
+        name: Выключить солнышко # Всплывающий текст-подсказка
+      primary: light blue # Основной цвет
+      accent: pink # Акцентный цвет
+      # вы можете использовать любой цвет из списка: 
+      # red; pink; purple; deep purple; indigo; blue; light blue; cyan; teal; 
+      # green; light green; lime; yellow; amber; orange; deep orange; brown; 
+      # grey; blue grey; black; white
+
+    # Настройки тёмной темы
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Позвать солнышко
+      primary: deep purple
+      accent: blue
+  features: # настройки функциональностей темы
+    #- navigation.sections # Добавление разделов верхнего уровня в боковом меню, отключение спойлеров в боковом меню
+    - navigation.path # Хлебные крошки
+    - navigation.indexes # Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav
+    #- navigation.tabs # Верхнее меню
+    #- navigation.tabs.sticky # Фиксация верхнего меню
+    #- navigation.expand # Разворачивает спойлеры в левом меню по умолчанию
+    #- toc.integrate # Фиксирует оглавление страницы в левом меню
+    - navigation.instant # Функция быстрой загрузки страниц
+    - navigation.top # Добавляет кнопку «к началу» для быстрой обратной прокрутки страницы
+    - search.suggest # Подсказки при вводе поискового запроса
+    - search.highlight # Подсветка результатов поиска в тексте страницы
+    - content.code.copy # Кнопка копирования в блоке кода
+
+nav: # Структура сайта
+- Главная страница: index.md
+- Руководства по Desktop-приложению Telegram:
+  - Instructions/Telegram/index.md
+  - Управление кэшем Telegram: Instructions/Telegram/sostarovoitov-instruction.md
+- Руководства по работе с LLM:
+  - Instructions/LLMs/index.md
+  - LLM workflow for a single topic: Instructions/LLMs/LLM-instruction.md
+- Облако тегов: tags.md
+
+markdown_extensions: # Расширения markdown
+  - admonition # Поддержка информационных панелей (сообщений типа «Внимание», «Совет», «Примечание», etc.)
+  - footnotes # Поддержка встроенных сносок на страницах
+  - attr_list # Использование html-атрибутов и CSS в элементах markdown
+  - md_in_html # Поддержка markdown внутри html
+  - def_list # Поддержка списков определений
+  - pymdownx.tabbed: # Использование вкладок (табов)
+      alternate_style: true
+  - pymdownx.details # Использование спойлеров (катов)
+  - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
+      anchor_linenums: true
+  - pymdownx.superfences # Поддержка вложенных блоков кода
+  - pymdownx.emoji: # Иконки и эмодзи
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg  
+
+plugins:
+  - search
+  - tags:
+      tags_allowed:
+      - help
+      - index
+      - whatever
+  - glightbox
