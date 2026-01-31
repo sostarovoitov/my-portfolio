@@ -2,4 +2,4 @@
 
 Оглавление страницы:
 
-[Сценарий 1](notesapp-instruction.md)
+[Редактирование заметки](notesapp-instruction.md)

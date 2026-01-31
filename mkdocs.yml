@@ -49,7 +49,7 @@ nav: # Структура сайта
 - Руководства по работе с LLM:
   - Instructions/LLMs/index.md
   - LLM workflow for a single topic: Instructions/LLMs/LLM-instruction.md
-- Руководства по работе с Нотссап:
+- Руководства по работе с Нотсапп:
   - Instructions/Notesapp/index.md
   - Редактирование заметки: Instructions/Notesapp/notesapp-instruction.md
 - Облако тегов: tags.md
