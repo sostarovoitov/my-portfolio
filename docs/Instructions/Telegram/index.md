@@ -1,5 +1,5 @@
 # Руководства по Desktop-приложению Telegram
 
-Оглавление:
+Оглавление страницы:
 
 [Управление кэшем Telegram](sostarovoitov-instruction.md)
