@@ -52,6 +52,8 @@ nav: # Структура сайта
 - Руководства по работе с Нотсапп:
   - Instructions/Notesapp/index.md
   - Редактирование заметки: Instructions/Notesapp/notesapp-instruction.md
+  - API дока Swagger: Instructions/Notesapp/notesapp-API-swagger.md
+  - API дока Redoc: Instructions/Notesapp/notesapp-API-redoc.md
 - Облако тегов: tags.md
 
 markdown_extensions: # Расширения markdown
@@ -78,3 +80,5 @@ plugins:
       - index
       - whatever
   - glightbox
+  - swagger-ui-tag
+  - redoc-tag
