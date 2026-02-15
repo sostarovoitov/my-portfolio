@@ -1,20 +1,25 @@
-site_name: My portfolio # Название сайта
-site_description: Тестовое портфолио # Описание сайта, добавляется в meta-теги
+site_name: Документационный портал # Название сайта
+site_description: Док портал обо всем # Описание сайта, добавляется в meta-теги
 theme: # Тема сайта, информация о ее параметрах
   name: material # Название темы
   logo: images/logo.svg # Ссылка на логотип сайта, логотип добавляется в папку `docs/images`
   font:
-    text: Roboto # Шрифт текста
-    code: Roboto Mono # Шрифт для текста кода
+    text: Lora # Шрифт текста
+    code: Montserrat # Шрифт для текста кода (формально). У меня будет переиспользован для заголовков
   language: ru # Язык
   palette: # Настройки светлой и тёмной тем
-    # Настройки светлой темы
-    - scheme: default 
+    # Настройки моей собственной темы
+    - scheme: myscheme
       toggle:
         icon: material/weather-sunny # Иконка для активации светлой темы
         name: Выключить солнышко # Всплывающий текст-подсказка
-      primary: light blue # Основной цвет
-      accent: pink # Акцентный цвет
+    # Настройки светлой темы - отключена
+    #- scheme: default 
+    #  toggle:
+    #    icon: material/weather-sunny # Иконка для активации светлой темы
+    #    name: Выключить солнышко # Всплывающий текст-подсказка
+    #  primary: light blue # Основной цвет
+    #  accent: pink # Акцентный цвет
       # вы можете использовать любой цвет из списка: 
       # red; pink; purple; deep purple; indigo; blue; light blue; cyan; teal; 
       # green; light green; lime; yellow; amber; orange; deep orange; brown; 
@@ -84,3 +89,6 @@ plugins:
   - redoc-tag
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
+
+extra_css:
+  - stylesheets/extra.css
