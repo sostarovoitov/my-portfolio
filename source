@@ -1,0 +1,6 @@
+# --8<-- [start:test_snippet]
+
+!!! note "Примечание"
+    Это уведомление добавлено с помощью расширения `pymdownx.snippets`
+
+# --8<-- [end:test_snippet]
