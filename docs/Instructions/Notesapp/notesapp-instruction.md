@@ -2,6 +2,7 @@
 tags:
   - help
 ---
+--8<-- "source:test_snippet"
 
 ## **Действующие лица**
 
