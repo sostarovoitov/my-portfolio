@@ -1,0 +1,374 @@
+/* Настройки светлой схемы - базовые */
+
+[data-md-color-scheme="myscheme"] {
+    /* Базовая палитра темы */
+  --md-primary-fg-color: #795548; /*Основной цвет*/
+  --md-accent-fg-color: #d84315; /*Акцентный цвет*/
+  --md-typeset-a-color: #8d6e63; /*Цвет ссылок*/
+  --md-default-bg-color: #f5f2ed; /*Фоновый цвет*/
+  --md-default-fg-color: #4e342e; /*Основной цвет текста (абзацы, списки, подзаголовки, nav и toc)*/
+  --md-default-fg-color--light: #3e2723; /*Цвет h1 и заголовков блоков toc и nav*/
+  --md-footer-bg-color: #3e2723; /*Цвет футера*/
+
+  /* Цвета для блоков кода (внутри текста) */
+  --md-code-bg-color: #ebe7e0; /*Цвет фона блока кода*/
+  --md-code-fg-color: #bf360c; /*Цвет текста в блоке кода*/
+  
+  /* Общие переменные для блоков заметок (admonitions) */
+  --md-admonition-fg-color: #4e342e;      /* Цвет текста внутри заметки */
+  --md-admonition-bg-color: #ebe7e0;      /* Фон самой заметки (тело блока) */
+
+  /* Цвет иконки тега в светлой теме */
+  --md-tag-icon-color: #d84315; 
+
+  /* Цвет фона и текста самого тега */
+  --md-tag-bg-color: rgba(121, 85, 72, 0.1);
+  --md-tag-fg-color: #795548;
+}
+
+/* Настройки светлой схемы - дополнительные по рекомендациям Gemini */
+
+/* 1. ГЕОМЕТРИЯ БЛОКОВ (Заметки и раскрывающиеся спойлеры) */
+[data-md-color-scheme="myscheme"] .admonition,
+[data-md-color-scheme="myscheme"] details {
+  border: none !important;                /* Удаляем стандартную синюю рамку со всех сторон */
+  border-left: .25rem solid #8d6e63 !important; /* Рисуем кофейную вертикальную полосу только слева */
+  background-color: #ffffff !important;        /* Чисто белый фон тела блока — чтобы не сливался с бежевым фоном сайта */
+  outline: none !important;               /* Убираем синий контур при клике мышкой */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;            /* Добавили крошечную тень для объема. Чтобы убрать тени вокруг блока совсем заменить на none !important */
+}
+
+/* 2. ШАПКА БЛОКА (Заголовок заметки или текст спойлера) */
+[data-md-color-scheme="myscheme"] .admonition-title,
+[data-md-color-scheme="myscheme"] summary {
+  background-color: rgba(121, 85, 72, 0.25) !important; /* Фон шапки (коричневый с прозрачностью 15%) */
+  color: #3e2723 !important;              /* Цвет текста в заголовке */
+  border-bottom: 1px solid rgba(121, 85, 72, 0.1); /* Тонкая линия между заголовком и текстом */
+}
+
+/* 3. ИКОНКИ И СТРЕЛКИ */
+[data-md-color-scheme="myscheme"] .admonition-title::before, /* Иконка слева в обычной заметке */
+[data-md-color-scheme="myscheme"] summary::before,          /* Иконка слева в спойлере */
+[data-md-color-scheme="myscheme"] summary::after {           /* Стрелка раскрытия спойлера (справа) */
+  background-color: #5d4037 !important;   /* Делаем все иконки насыщенно-коричневыми */
+}
+
+/* 4. ВИЗУАЛЬНЫЙ ОТКЛИК */
+[data-md-color-scheme="myscheme"] .md-typeset details:focus-within {
+  /* При клике на блок появляется едва заметное терракотовое свечение вместо синего */
+  box-shadow: 0 0 0 0.05rem rgba(216, 67, 21, 0.2) !important;
+}
+
+/* 5. НАСТРОЙКА СКРОЛЛБАРА */
+/* 1. Глобальная настройка для Chrome/Edge/Safari */
+/* Применяем ко всей странице (html) и ко всем блокам внутри (body) */
+html, body, [data-md-color-scheme="myscheme"] {
+  scrollbar-color: #a1887f transparent; /* Для Firefox */
+  scrollbar-width: thin;
+}
+
+/* 2. Детальная настройка для Chrome (Webkit) */
+::-webkit-scrollbar {
+  width: 10px; /* Ширина полосы */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Фон дорожки (делаем прозрачным под цвет сайта) */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a1887f !important; /* Цвет бегунка */
+  border-radius: 20px;                 /* Скругление */
+  border: 2px solid #f5f2ed;           /* Отступ цветом вашего фона (создает эффект парения) */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #795548 !important; /* Цвет при наведении */
+}
+
+/* Настройки тёмной схемы - базовые */
+
+[data-md-color-scheme="slate"] {
+    /* Базовая палитра темы */
+  --md-primary-fg-color: #2b1d1a; /*Основной цвет*/
+  --md-accent-fg-color: #ffb74d; /*Акцентный цвет*/
+  --md-typeset-a-color: #d7ccc8; /*Цвет ссылок*/
+  --md-default-bg-color: #1a1210; /*Фоновый цвет*/
+  --md-default-fg-color: #ece2d0; /*Основной цвет текста (абзацы, списки, подзаголовки, nav и toc)*/
+  --md-default-fg-color--light: #ffffff; /*Цвет h1 и заголовков блоков toc и nav*/
+  --md-footer-bg-color: #140d0c; /*Цвет футера*/
+
+  /* Цвета для блоков кода (внутри текста) */
+  --md-code-bg-color: #251a17; /*Цвет фона блока кода*/
+  --md-code-fg-color: #ffcc80; /*Цвет текста в блоке кода*/
+  
+  /* Общие переменные для блоков заметок (admonitions) */
+  --md-admonition-fg-color: #ece2d0;      /* Цвет текста внутри заметки */
+  --md-admonition-bg-color: #251a17;      /* Фон самой заметки (тело блока) */
+
+   /* Цвет иконки тега в темной теме */
+  --md-tag-icon-color: #ffb74d; 
+
+  /* Цвет фона и текста самого тега */
+  --md-tag-bg-color: rgba(255, 183, 77, 0.1);
+  --md-tag-fg-color: #ffb74d;
+}
+
+/* Настройки тёмной схемы - дополнительные по рекомендациям Gemini */
+
+/* 1. ГЕОМЕТРИЯ БЛОКОВ (Заметки и раскрывающиеся спойлеры) */
+[data-md-color-scheme="slate"] .admonition,
+[data-md-color-scheme="slate"] details {
+  border: none !important;                /* Удаляем стандартную синюю рамку со всех сторон */
+  border-left: .25rem solid #795548 !important; /* Рисуем кофейную вертикальную полосу только слева */
+  background-color: #211614 !important;        /* Глубокий коричневый фон тела блока — чтобы не сливался с фоном сайта */
+  outline: none !important;               /* Убираем синий контур при клике мышкой */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3) !important;            /* Добавили крошечную тень для объема. Чтобы убрать тени вокруг блока совсем заменить на none !important */
+}
+
+/* 2. ШАПКА БЛОКА (Заголовок заметки или текст спойлера) */
+[data-md-color-scheme="slate"] .admonition-title,
+[data-md-color-scheme="slate"] summary {
+  background-color: rgba(121, 85, 72, 0.2) !important; /* Фон шапки (коричневый с прозрачностью) */
+  color: #ffffff !important;              /* Цвет текста в заголовке */
+  border-bottom: 1px solid rgba(121, 85, 72, 0.1); /* Тонкая линия между заголовком и текстом */
+}
+
+/* 3. ИКОНКИ И СТРЕЛКИ */
+[data-md-color-scheme="slate"] .admonition-title::before, /* Иконка слева в обычной заметке */
+[data-md-color-scheme="slate"] summary::before,          /* Иконка слева в спойлере */
+[data-md-color-scheme="slate"] summary::after {           /* Стрелка раскрытия спойлера (справа) */
+  background-color: #d7ccc8 !important;   /* Делаем все иконки светлыми */
+}
+
+/* 4. ВИЗУАЛЬНЫЙ ОТКЛИК */
+[data-md-color-scheme="slate"] .md-typeset details:focus-within {
+  /* При клике на блок появляется едва заметное оранжевое свечение вместо синего */
+  box-shadow: 0 0 0 0.05rem rgba(255, 183, 77, 0.2) !important;
+}
+
+/* 5. НАСТРОЙКА СКРОЛЛБАРА */
+/* 1. Глобальная настройка для Chrome/Edge/Safari */
+/* Применяем ко всей странице (html) и ко всем блокам внутри (body) */
+html, body, [data-md-color-scheme="slate"] {
+  scrollbar-color: #4e342e transparent; /* Для Firefox */
+  scrollbar-width: thin;
+}
+
+/* 2. Детальная настройка для Chrome (Webkit) */
+[data-md-color-scheme="slate"] ::-webkit-scrollbar {
+  width: 10px; /* Ширина полосы */
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-track {
+  background: transparent; /* Фон дорожки (делаем прозрачным под цвет сайта) */
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb {
+  background-color: #4e342e !important; /* Цвет бегунка */
+  border-radius: 20px;                 /* Скругление */
+  border: 2px solid #1a1210;           /* Отступ цветом вашего фона (создает эффект парения) */
+}
+
+[data-md-color-scheme="slate"] ::-webkit-scrollbar-thumb:hover {
+  background-color: #795548 !important; /* Цвет при наведении */
+}
+
+/* НАСТРОЙКИ ШРИФТОВ */
+
+/* ==========================================================
+   1. БАЗОВЫЕ НАСТРОЙКИ ШРИФТОВ (КОНТЕНТ)
+   ========================================================== */
+
+/* 1. Основной текст статьи */
+.md-typeset {
+  font-family: 'Lora', serif;
+  font-size: 18px;          
+  line-height: 1.7;         
+  font-weight: 450;         
+  color: var(--md-default-fg-color); 
+  -webkit-font-smoothing: antialiased; /* дополнительная четкость */
+}
+
+/* 2. Заголовки внутри статьи (h1 - h4) */
+.md-typeset h1, 
+.md-typeset h2, 
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 700;
+  color: var(--md-default-fg-color--light); /* Цвет h1 из настроек тем */
+  /*margin-top: 1.5em; /* отступ сверху - лучше убрать */
+  /*margin-bottom: 0.5rem; /* отступ снизу - лучше убрать */
+}
+
+/* 3. Блоки кода (системный шрифт, так как поле code занято под Montserrat) */
+code, kbd, pre {
+  font-family: 'Consolas', 'Monaco', monospace !important; 
+  font-size: 0.95em !important; 
+  font-weight: 400;
+}
+
+/* ==========================================================
+   2. ИНТЕРФЕЙС И НАВИГАЦИЯ (ШАПКА, МЕНЮ)
+   ========================================================== */
+
+/* 1. Заголовок всего документационного портала */
+.md-header__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+}
+
+/* 2. Левое меню (Навигация по разделам) */
+
+.md-nav {
+  font-family: 'Tahoma', sans-serif;
+  font-size: 0.75rem; 
+  line-height: 1.3;
+}
+
+/* 3. Заголовок левого меню */
+.md-nav__title {
+  font-family: 'Tahoma', sans-serif;
+  color: var(--md-default-fg-color) !important; 
+  font-weight: 700;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.7; /* Делает заголовок мягче */
+}
+
+/* 4. Правое меню (Оглавление текущей статьи) */
+
+.md-sidebar--secondary {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.7rem;
+}
+
+/* 5. Заголовок правого меню */
+.md-sidebar--secondary .md-nav__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.7; /* Делает заголовок мягче */
+}
+
+/* 6. Интервалы правого меню */
+.md-sidebar--secondary .md-nav__link {
+  line-height: 1.35 !important;      /* Оптимальный интервал для чтения */
+  padding-top: 0.25rem !important;   /* Чуть больше места сверху */
+  padding-bottom: 0.25rem !important;/* Чуть больше места снизу */
+  margin-top: 0 !important;          /* Убираем лишние внешние отступы */
+}
+
+
+
+
+/* ==========================================================
+   3. ИНТЕРАКТИВНОСТЬ (АКТИВНЫЕ ПУНКТЫ И ТЕГИ)
+   ========================================================== */
+
+/* 1. Подсветка активных пунктов меню и названий папок */
+.md-nav__link--active,
+.md-nav__link--index {
+  font-weight: 700 !important;
+  color: var(--md-accent-fg-color) !important; /* Цвет из настроек темы */
+}
+
+/* 2. Цвет при наведении на любой пункт меню */
+.md-nav__link:hover {
+  color: var(--md-accent-fg-color) !important;
+  opacity: 0.8;
+}
+
+/* 3. Хлебные крошки */
+.md-breadcrumbs {
+  font-family: 'Tahoma', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;       
+  letter-spacing: 0.02em; 
+  opacity: 0.8;     
+}
+
+/* ==========================================================
+   4. ОБЛАКО ТЕГОВ (СТИЛЬ, ЦВЕТА И ПОЗИЦИЯ)
+   ========================================================== */
+
+/* Прижимаем весь блок тегов к заголовку h1 */
+.md-tag-list {
+  margin-top: 0 !important;
+}
+
+/* Настройка иконки перед тегом */
+.md-tag::before {
+  /* Используем цвет иконки, заданный в блоках светлой/темной тем */
+  background-color: var(--md-tag-icon-color) !important;
+}
+
+/* Сам тег (внешний вид и цвета) */
+.md-tag {
+  /* 1. Шрифты и текст */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  
+  /* 2. Цвета (берутся из переменных тем) */
+  background-color: var(--md-tag-bg-color) !important;
+  color: var(--md-tag-fg-color) !important;
+  
+  /* 3. Форма и границы */
+  border-radius: 10px !important; /* Делает тег "пилюлей" */
+  border: none !important;        /* Убирает стандартную рамку */
+  padding: 2px 10px !important;   /* Добавляет внутренний простор */
+}
+
+
+/* ==========================================================
+   5. СТИЛИЗАЦИЯ ПОИСКА (АДАПТИВНАЯ)
+   ========================================================== */
+
+/* 1. Контейнер окна поиска */
+.md-search__inner {
+  background-color: var(--md-default-bg-color) !important;
+  border-radius: 8px !important; /* Скругляем углы окна */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important; /* Более мягкая тень */
+}
+
+/* 2. Поле ввода (шапка поиска) */
+.md-search__form {
+  background-color: var(--md-code-bg-color) !important;
+  border-radius: 8px 8px 0 0 !important;
+  border-bottom: 2px solid var(--md-accent-fg-color) !important; /* Фирменная линия */
+}
+
+/* 3. Текст и иконки */
+.md-search__input {
+  font-family: 'Tahoma', sans-serif;
+  color: var(--md-default-fg-color) !important;
+}
+
+.md-search__input::placeholder {
+  color: var(--md-default-fg-color) !important;
+  opacity: 0.5;
+}
+
+.md-search__icon {
+  color: var(--md-accent-fg-color) !important; /* Иконка лупы теперь акцентная */
+}
+
+/* 4. Результаты поиска */
+.md-search-result__link:hover {
+  background-color: rgba(121, 85, 72, 0.05) !important;
+  color: var(--md-accent-fg-color) !important;
+}
+
+/* 5. Подсветка найденных букв */
+.md-search-result mark {
+  color: var(--md-accent-fg-color) !important;
+  background-color: transparent !important;
+  font-weight: 700;
+}

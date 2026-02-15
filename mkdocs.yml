@@ -1,20 +1,26 @@
-site_name: My portfolio # Название сайта
-site_description: Тестовое портфолио # Описание сайта, добавляется в meta-теги
+site_name: Документационный портал # Название сайта
+site_description: Док портал обо всем # Описание сайта, добавляется в meta-теги
+copyright: '2026'
 theme: # Тема сайта, информация о ее параметрах
   name: material # Название темы
   logo: images/logo.svg # Ссылка на логотип сайта, логотип добавляется в папку `docs/images`
   font:
-    text: Roboto # Шрифт текста
-    code: Roboto Mono # Шрифт для текста кода
+    text: Lora # Шрифт текста
+    code: Montserrat # Шрифт для текста кода (формально). У меня используется для заголовков
   language: ru # Язык
   palette: # Настройки светлой и тёмной тем
-    # Настройки светлой темы
-    - scheme: default 
+    # Настройки моей собственной темы
+    - scheme: myscheme
       toggle:
         icon: material/weather-sunny # Иконка для активации светлой темы
         name: Выключить солнышко # Всплывающий текст-подсказка
-      primary: light blue # Основной цвет
-      accent: pink # Акцентный цвет
+    # Настройки светлой темы - отключена
+    #- scheme: default 
+    #  toggle:
+    #    icon: material/weather-sunny # Иконка для активации светлой темы
+    #    name: Выключить солнышко # Всплывающий текст-подсказка
+    #  primary: light blue # Основной цвет
+    #  accent: pink # Акцентный цвет
       # вы можете использовать любой цвет из списка: 
       # red; pink; purple; deep purple; indigo; blue; light blue; cyan; teal; 
       # green; light green; lime; yellow; amber; orange; deep orange; brown; 
@@ -48,7 +54,7 @@ nav: # Структура сайта
   - Управление кэшем Telegram: Instructions/Telegram/sostarovoitov-instruction.md
 - Руководства по работе с LLM:
   - Instructions/LLMs/index.md
-  - LLM workflow for a single topic: Instructions/LLMs/LLM-instruction.md
+  - Методика ведения чата с LLM: Instructions/LLMs/LLM-instruction.md
 - Руководства по работе с Нотсапп:
   - Instructions/Notesapp/index.md
   - Редактирование заметки: Instructions/Notesapp/notesapp-instruction.md
@@ -71,6 +77,9 @@ markdown_extensions: # Расширения markdown
   - pymdownx.emoji: # Иконки и эмодзи
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg  
+  - pymdownx.snippets:
+      base_path:
+        - docs
 
 plugins:
   - search
@@ -84,3 +93,8 @@ plugins:
   - redoc-tag
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
+      theme:
+          enabled: false
+
+extra_css:
+  - stylesheets/extra.css

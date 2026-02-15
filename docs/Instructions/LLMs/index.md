@@ -2,4 +2,4 @@
 
 Оглавление страницы:
 
-[LLM workflow for a single topic](LLM-instruction.md)
+[Методика ведения чата с LLM](LLM-instruction.md)
