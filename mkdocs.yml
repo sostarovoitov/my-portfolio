@@ -49,12 +49,16 @@ theme: # Тема сайта, информация о ее параметрах
 
 nav: # Структура сайта
 - Главная страница: index.md
+- Руководства по работе с LLM:
+  - Instructions\LLMs\index.md
+  - Методика ведения чата с LLM: Instructions/LLMs/LLM-general-instruction.md
+  - Шаблон первичного промпта: Instructions/LLMs/prompt-template.md
+  - Мета-промпты: Instructions/LLMs/meta-prompts.md
+  - Критерии качества ответа: Instructions/LLMs/QA.md
+  - Техники улучшения результата: Instructions/LLMs/quality-improvement-technics.md
 - Руководства по Desktop-приложению Telegram:
   - Instructions/Telegram/index.md
   - Управление кэшем Telegram: Instructions/Telegram/sostarovoitov-instruction.md
-- Руководства по работе с LLM:
-  - Instructions/LLMs/index.md
-  - Методика ведения чата с LLM: Instructions/LLMs/LLM-instruction.md
 - Руководства по работе с Нотсапп:
   - Instructions/Notesapp/index.md
   - Редактирование заметки: Instructions/Notesapp/notesapp-instruction.md
@@ -68,6 +72,8 @@ markdown_extensions: # Расширения markdown
   - attr_list # Использование html-атрибутов и CSS в элементах markdown
   - md_in_html # Поддержка markdown внутри html
   - def_list # Поддержка списков определений
+  - pymdownx.mark  # Для выделения текста ==вот так==
+  - pymdownx.caret # Для подчеркивания ^^вот так^^ и надстрочных знаков
   - pymdownx.tabbed: # Использование вкладок (табов)
       alternate_style: true
   - pymdownx.details # Использование спойлеров (катов)
