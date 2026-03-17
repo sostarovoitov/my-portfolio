@@ -54,8 +54,11 @@ nav: # Структура сайта
   - Методика ведения чата с LLM: Instructions/LLMs/LLM-general-instruction.md
   - Шаблон первичного промпта: Instructions/LLMs/prompt-template.md
   - Мета-промпты: Instructions/LLMs/meta-prompts.md
-  - Критерии качества ответа: Instructions/LLMs/QA.md
+  - Критерии качества результата: Instructions/LLMs/QA.md
   - Техники улучшения результата: Instructions/LLMs/quality-improvement-technics.md
+  - Техника смены темы: Instructions/LLMs/pivot.md
+  - Саммаризация и перенос контекста: Instructions/LLMs/summary.md
+  - Чек-лист для проверки саммари: Instructions/LLMs/summary-QA.md
 - Руководства по Desktop-приложению Telegram:
   - Instructions/Telegram/index.md
   - Управление кэшем Telegram: Instructions/Telegram/sostarovoitov-instruction.md
@@ -74,6 +77,9 @@ markdown_extensions: # Расширения markdown
   - def_list # Поддержка списков определений
   - pymdownx.mark  # Для выделения текста ==вот так==
   - pymdownx.caret # Для подчеркивания ^^вот так^^ и надстрочных знаков
+  - pymdownx.tasklist:        # Для использования чек-боксов
+      custom_checkbox: true   # Делает чек-боксы красивыми (в стиле Material)
+      clickable_checkbox: true # Делает чек-боксы кликабельными
   - pymdownx.tabbed: # Использование вкладок (табов)
       alternate_style: true
   - pymdownx.details # Использование спойлеров (катов)
@@ -104,3 +110,8 @@ plugins:
 
 extra_css:
   - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/starovoitov_so

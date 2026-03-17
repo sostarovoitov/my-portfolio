@@ -86,6 +86,7 @@ html, body, [data-md-color-scheme="myscheme"] {
   background-color: #795548 !important; /* Цвет при наведении */
 }
 
+
 /* Настройки тёмной схемы - базовые */
 
 [data-md-color-scheme="slate"] {
@@ -190,11 +191,12 @@ html, body, [data-md-color-scheme="slate"] {
   -webkit-font-smoothing: antialiased; /* дополнительная четкость */
 }
 
-/* 2. Заголовки внутри статьи (h1 - h4) */
+/* 2. Заголовки внутри статьи (h1 - h5) */
 .md-typeset h1, 
 .md-typeset h2, 
 .md-typeset h3,
-.md-typeset h4 {
+.md-typeset h4,
+.md-typeset h5 {
   font-family: 'Montserrat', sans-serif; 
   font-weight: 700;
   color: var(--md-default-fg-color--light); /* Цвет h1 из настроек тем */
