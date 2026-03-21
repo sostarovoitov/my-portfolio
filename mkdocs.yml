@@ -1,9 +1,11 @@
-site_name: Документационный портал # Название сайта
-site_description: Док портал обо всем # Описание сайта, добавляется в meta-теги
-copyright: '2026'
+site_name: Документационный портал # Название сайта (уточнить)
+site_description: Портал с инструкциями и справочными материалами # Описание сайта, добавляется в meta-теги (уточнить)
+copyright: Copyright © 2026
+
 theme: # Тема сайта, информация о ее параметрах
   name: material # Название темы
   logo: images/logo.svg # Ссылка на логотип сайта, логотип добавляется в папку `docs/images`
+  favicon: images/logo.svg # Иконка сайта на вкладке браузера (уточнить)
   font:
     text: Lora # Шрифт текста
     code: Montserrat # Шрифт для текста кода (формально). У меня используется для заголовков
@@ -31,8 +33,6 @@ theme: # Тема сайта, информация о ее параметрах
       toggle:
         icon: material/shield-sun
         name: На свет
-      primary: deep purple
-      accent: blue
   features: # настройки функциональностей темы
     #- navigation.sections # Добавление разделов верхнего уровня в боковом меню, отключение спойлеров в боковом меню
     - navigation.path # Хлебные крошки
@@ -48,7 +48,7 @@ theme: # Тема сайта, информация о ее параметрах
     - content.code.copy # Кнопка копирования в блоке кода
 
 nav: # Структура сайта
-- О сайте: index.md
+- Главная страница: index.md
 - Руководства по работе с LLM:
   - Instructions/LLMs/index.md
   - Методика ведения чата с LLM: Instructions/LLMs/LLM-general-instruction.md
@@ -86,6 +86,7 @@ markdown_extensions: # Расширения markdown
   - pymdownx.details # Использование спойлеров (катов)
   - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
       anchor_linenums: true
+  - pymdownx.inlinehilite # Подсветка синтексиса кода внутри текста (inline code)
   - pymdownx.superfences # Поддержка вложенных блоков кода
   - pymdownx.emoji: # Иконки и эмодзи
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -94,10 +95,12 @@ markdown_extensions: # Расширения markdown
       base_path:
         - docs
   - toc:
-      permalink: "#"
+      permalink: "#" # Возможно исправить на другой символ
 
 plugins:
-  - search
+  - search: # Плагин поиска, адаптированный под русскоязычный контент
+      separator: '[\s\-,:!=\[\]()"`/]+'
+      lang: ru
   - tags:
       tags_allowed:
       - help
@@ -115,6 +118,7 @@ extra_css:
   - stylesheets/extra.css
 
 extra:
+  generator: false
   social:
     - icon: fontawesome/brands/telegram
       link: https://t.me/starovoitov_so

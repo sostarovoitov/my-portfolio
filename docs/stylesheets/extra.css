@@ -10,7 +10,7 @@ III Настройка прочих элементов - шрифты, нави�
     /* Базовая палитра темы */
   --md-primary-fg-color: #795548; /*Основной цвет*/
   --md-accent-fg-color: #d84315; /*Акцентный цвет*/
-  --md-typeset-a-color: #8d6e63; /*Цвет ссылок*/
+  --md-typeset-a-color: #a0522d; /*Цвет ссылок*/
   --md-default-bg-color: #f5f2ed; /*Фоновый цвет*/
   --md-default-fg-color: #4e342e; /*Основной цвет текста (абзацы, списки, подзаголовки, nav и toc)*/
   --md-default-fg-color--light: #3e2723; /*Цвет h1 и заголовков блоков toc и nav*/
@@ -33,6 +33,12 @@ III Настройка прочих элементов - шрифты, нави�
 }
 
 /* Настройки светлой схемы - дополнительные по рекомендациям Gemini */
+
+/* 0. Костыль для правок цветов самих ссылок и их подчеркивания  */
+[data-md-color-scheme="myscheme"] .md-typeset a:hover {
+  color: var(--md-typeset-a-color) !important;
+  border-bottom-color: var(--md-typeset-a-color) !important;
+}
 
 /* 1. ГЕОМЕТРИЯ БЛОКОВ (Заметки и раскрывающиеся спойлеры) */
 [data-md-color-scheme="myscheme"] .admonition,
@@ -89,7 +95,13 @@ III Настройка прочих элементов - шрифты, нави�
   color: #3e2723;
 }
 
-/* 8. НАСТРОЙКА СКРОЛЛБАРА */
+/* 8. Настройка границ для карточек (grid cards markdown)  */
+
+[data-md-color-scheme="myscheme"] .md-typeset .grid.cards > ul > li {
+  border: 1px solid rgba(121, 85, 72, 0.2);
+}
+
+/* 9. НАСТРОЙКА СКРОЛЛБАРА */
 /* 1. Глобальная настройка для Chrome/Edge/Safari */
 /* Применяем ко всей странице (html) и ко всем блокам внутри (body) */
 html, body, [data-md-color-scheme="myscheme"] {
@@ -123,7 +135,7 @@ html, body, [data-md-color-scheme="myscheme"] {
     /* Базовая палитра темы */
   --md-primary-fg-color: #2b1d1a; /*Основной цвет*/
   --md-accent-fg-color: #ffb74d; /*Акцентный цвет*/
-  --md-typeset-a-color: #d7ccc8; /*Цвет ссылок*/
+  --md-typeset-a-color: #bcaaa4; /*Цвет ссылок*/
   --md-default-bg-color: #1a1210; /*Фоновый цвет*/
   --md-default-fg-color: #ece2d0; /*Основной цвет текста (абзацы, списки, подзаголовки, nav и toc)*/
   --md-default-fg-color--light: #ffffff; /*Цвет h1 и заголовков блоков toc и nav*/
@@ -145,7 +157,16 @@ html, body, [data-md-color-scheme="myscheme"] {
   --md-tag-fg-color: #ffb74d;
 }
 
-/* Настройки тёмной схемы - дополнительные по рекомендациям Gemini */
+/* 0. Костыль для правок цветов самих ссылок и их подчеркивания  */
+
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #bcaaa4 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: #bcaaa4 !important;
+  border-bottom-color: #bcaaa4 !important;
+}
 
 /* 1. ГЕОМЕТРИЯ БЛОКОВ (Заметки и раскрывающиеся спойлеры) */
 [data-md-color-scheme="slate"] .admonition,
@@ -203,7 +224,12 @@ html, body, [data-md-color-scheme="myscheme"] {
   color: #ffffff;
 }
 
-/* 8. НАСТРОЙКА СКРОЛЛБАРА */
+/* 8. Настройка границ для карточек (grid cards markdown)  */
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li {
+  border: 1px solid rgba(215, 204, 200, 0.15);
+}
+
+/* 9. НАСТРОЙКА СКРОЛЛБАРА */
 /* 1. Глобальная настройка для Chrome/Edge/Safari */
 /* Применяем ко всей странице (html) и ко всем блокам внутри (body) */
 html, body, [data-md-color-scheme="slate"] {
