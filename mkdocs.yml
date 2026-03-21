@@ -12,8 +12,8 @@ theme: # Тема сайта, информация о ее параметрах
     # Настройки моей собственной темы
     - scheme: myscheme
       toggle:
-        icon: material/weather-sunny # Иконка для активации светлой темы
-        name: Выключить солнышко # Всплывающий текст-подсказка
+        icon: material/shield-moon # Иконка для активации светлой темы
+        name: Во тьму # Всплывающий текст-подсказка
     # Настройки светлой темы - отключена
     #- scheme: default 
     #  toggle:
@@ -29,8 +29,8 @@ theme: # Тема сайта, информация о ее параметрах
     # Настройки тёмной темы
     - scheme: slate
       toggle:
-        icon: material/weather-night
-        name: Позвать солнышко
+        icon: material/shield-sun
+        name: На свет
       primary: deep purple
       accent: blue
   features: # настройки функциональностей темы
@@ -48,17 +48,17 @@ theme: # Тема сайта, информация о ее параметрах
     - content.code.copy # Кнопка копирования в блоке кода
 
 nav: # Структура сайта
-- Главная страница: index.md
+- О сайте: index.md
 - Руководства по работе с LLM:
   - Instructions/LLMs/index.md
   - Методика ведения чата с LLM: Instructions/LLMs/LLM-general-instruction.md
-  - Шаблон первичного промпта: Instructions/LLMs/prompt-template.md
-  - Мета-промпты: Instructions/LLMs/meta-prompts.md
-  - Критерии качества результата: Instructions/LLMs/QA.md
+  - Формирование первичного промпта: Instructions/LLMs/prompt-template.md
+  - Улучшение первичного промпта: Instructions/LLMs/meta-prompts.md
+  - Оценка качества результата: Instructions/LLMs/QA.md
   - Техники улучшения результата: Instructions/LLMs/quality-improvement-technics.md
   - Техника смены темы: Instructions/LLMs/pivot.md
-  - Саммаризация и перенос контекста: Instructions/LLMs/summary.md
-  - Чек-лист для проверки саммари: Instructions/LLMs/summary-QA.md
+  - Формирование саммари: Instructions/LLMs/summary.md
+  - Оценка качества саммари: Instructions/LLMs/summary-QA.md
 - Руководства по Desktop-приложению Telegram:
   - Instructions/Telegram/index.md
   - Управление кэшем Telegram: Instructions/Telegram/sostarovoitov-instruction.md
@@ -77,6 +77,7 @@ markdown_extensions: # Расширения markdown
   - def_list # Поддержка списков определений
   - pymdownx.mark  # Для выделения текста ==вот так==
   - pymdownx.caret # Для подчеркивания ^^вот так^^ и надстрочных знаков
+  - pymdownx.blocks.caption #для подписей под рисунками (тестить)
   - pymdownx.tasklist:        # Для использования чек-боксов
       custom_checkbox: true   # Делает чек-боксы красивыми (в стиле Material)
       clickable_checkbox: true # Делает чек-боксы кликабельными
@@ -92,6 +93,8 @@ markdown_extensions: # Расширения markdown
   - pymdownx.snippets:
       base_path:
         - docs
+  - toc:
+      permalink: "#"
 
 plugins:
   - search
@@ -100,7 +103,7 @@ plugins:
       - help
       - index
       - whatever
-  - glightbox
+  - glightbox:
   - swagger-ui-tag
   - redoc-tag
   - plantuml:

@@ -1,3 +1,9 @@
+/* Структура extra.css 
+I Базовые и дополнительные настройки светлой темы
+II Базовые и дополнительные настройки светлой темы
+III Настройка прочих элементов - шрифты, навигация
+*/
+
 /* Настройки светлой схемы - базовые */
 
 [data-md-color-scheme="myscheme"] {
@@ -36,6 +42,7 @@
   background-color: #ffffff !important;        /* Чисто белый фон тела блока — чтобы не сливался с бежевым фоном сайта */
   outline: none !important;               /* Убираем синий контур при клике мышкой */
   box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;            /* Добавили крошечную тень для объема. Чтобы убрать тени вокруг блока совсем заменить на none !important */
+  transition: box-shadow 0.2s ease-in-out; /* ТЕСТ */
 }
 
 /* 2. ШАПКА БЛОКА (Заголовок заметки или текст спойлера) */
@@ -59,7 +66,30 @@
   box-shadow: 0 0 0 0.05rem rgba(216, 67, 21, 0.2) !important;
 }
 
-/* 5. НАСТРОЙКА СКРОЛЛБАРА */
+/* 5. Скругление и отсупы в incline code (фрагментах кода, встроенных прямо в предложение */
+[data-md-color-scheme="myscheme"] .md-typeset code {
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+}
+
+/* 6. Подчеркивание ссылок при наведении */
+[data-md-color-scheme="myscheme"] .md-typeset a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+[data-md-color-scheme="myscheme"] .md-typeset a:hover {
+  border-bottom-color: var(--md-typeset-a-color);
+}
+
+/* 7. Настройка цвета выделения текста */
+[data-md-color-scheme="myscheme"] ::selection {
+  background-color: rgba(121, 85, 72, 0.4);
+  color: #3e2723;
+}
+
+/* 8. НАСТРОЙКА СКРОЛЛБАРА */
 /* 1. Глобальная настройка для Chrome/Edge/Safari */
 /* Применяем ко всей странице (html) и ко всем блокам внутри (body) */
 html, body, [data-md-color-scheme="myscheme"] {
@@ -125,6 +155,7 @@ html, body, [data-md-color-scheme="myscheme"] {
   background-color: #211614 !important;        /* Глубокий коричневый фон тела блока — чтобы не сливался с фоном сайта */
   outline: none !important;               /* Убираем синий контур при клике мышкой */
   box-shadow: 0 2px 5px rgba(0,0,0,0.3) !important;            /* Добавили крошечную тень для объема. Чтобы убрать тени вокруг блока совсем заменить на none !important */
+  transition: box-shadow 0.2s ease-in-out;
 }
 
 /* 2. ШАПКА БЛОКА (Заголовок заметки или текст спойлера) */
@@ -148,7 +179,31 @@ html, body, [data-md-color-scheme="myscheme"] {
   box-shadow: 0 0 0 0.05rem rgba(255, 183, 77, 0.2) !important;
 }
 
-/* 5. НАСТРОЙКА СКРОЛЛБАРА */
+/* 5. Скругление и отсупы в incline code (фрагментах кода, встроенных прямо в предложение */
+[data-md-color-scheme="slate"] .md-typeset code {
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  background-color: rgba(255, 183, 77, 0.1);
+}
+
+/* 6. Подчеркивание ссылок при наведении */
+[data-md-color-scheme="slate"] .md-typeset a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  border-bottom-color: var(--md-typeset-a-color);
+}
+
+/* 7. Настройка цвета выделения текста */
+[data-md-color-scheme="slate"] ::selection {
+  background-color: rgba(255, 183, 77, 0.4);
+  color: #ffffff;
+}
+
+/* 8. НАСТРОЙКА СКРОЛЛБАРА */
 /* 1. Глобальная настройка для Chrome/Edge/Safari */
 /* Применяем ко всей странице (html) и ко всем блокам внутри (body) */
 html, body, [data-md-color-scheme="slate"] {
@@ -184,10 +239,10 @@ html, body, [data-md-color-scheme="slate"] {
 /* 1. Основной текст статьи */
 .md-typeset {
   font-family: 'Lora', serif;
-  font-size: 18px;          
-  line-height: 1.7;         
-  font-weight: 450;         
-  color: var(--md-default-fg-color); 
+  font-size: 14px;          
+  line-height: 1.7;
+  font-weight: 450;     
+  color: var(--md-default-fg-color);
   -webkit-font-smoothing: antialiased; /* дополнительная четкость */
 }
 
@@ -266,9 +321,6 @@ code, kbd, pre {
   margin-top: 0 !important;          /* Убираем лишние внешние отступы */
 }
 
-
-
-
 /* ==========================================================
    3. ИНТЕРАКТИВНОСТЬ (АКТИВНЫЕ ПУНКТЫ И ТЕГИ)
    ========================================================== */
@@ -277,22 +329,36 @@ code, kbd, pre {
 .md-nav__link--active,
 .md-nav__link--index {
   font-weight: 700 !important;
-  color: var(--md-accent-fg-color) !important; /* Цвет из настроек темы */
+  color: var(--md-accent-fg-color) !important;
 }
 
-/* 2. Цвет при наведении на любой пункт меню */
+/* 2. Подложка для выбранного заголовка в левом меню */
+.md-nav--primary .md-nav__link--active:not(label),
+.md-nav--primary .md-nav__link--index:not(label) {
+  background-color: color-mix(in srgb, var(--md-accent-fg-color) 8%, transparent) !important;
+  border-left: 3px solid var(--md-accent-fg-color) !important;
+  padding-left: 8px !important;
+  border-radius: 0 4px 4px 0 !important;
+}
+
+/* 3. Цвет при наведении на любой пункт меню */
 .md-nav__link:hover {
   color: var(--md-accent-fg-color) !important;
   opacity: 0.8;
 }
 
-/* 3. Хлебные крошки */
+/* 4. Хлебные крошки */
 .md-breadcrumbs {
   font-family: 'Tahoma', sans-serif;
   font-size: 0.65rem;
   font-weight: 400;       
   letter-spacing: 0.02em; 
   opacity: 0.8;     
+}
+
+/* 5. плавное усиление тени при наведении мыши на details ТЕСТ */
+.md-typeset details:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* ==========================================================

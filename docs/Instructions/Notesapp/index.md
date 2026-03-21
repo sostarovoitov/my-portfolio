@@ -1,9 +1,20 @@
 # Руководства по Нотсапп
 
-Оглавление страницы:
+<div class="grid cards" markdown>
 
-[Редактирование заметки](notesapp-instruction.md)
+-   :material-note-edit-outline: __[Редактирование заметки](notesapp-instruction.md)__
 
-[API дока Swagger](notesapp-API-swagger.md)
+    ---
+    Use case редактирования заметки
 
-[API дока Redoc](notesapp-API-redoc.md)
+-   :material-api: __[API дока Swagger](notesapp-API-swagger.md)__
+
+    ---
+    API документация приложения в формате Swagger UI
+
+-   :material-file-document-multiple-outline: __[API дока Redoc](notesapp-API-redoc.md)__
+
+    ---
+    API документация приложения в формате Redoc
+
+</div>

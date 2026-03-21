@@ -1,5 +1,8 @@
 # Руководства по Desktop-приложению Telegram
 
-Оглавление страницы:
+<div class="grid cards" markdown>
+-   :material-tune: __[Управление кэшем Telegram](sostarovoitov-instruction.md)__
 
-[Управление кэшем Telegram](sostarovoitov-instruction.md)
+    ---
+    Настройки параметров локального кэширования файлов в Telegram Desktop
+</div>
