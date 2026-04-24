@@ -140,7 +140,10 @@ plugins:
       puml_url: https://www.plantuml.com/plantuml/
       theme:
           enabled: false
-  - social
+  - social:
+    cards_layout_options:
+      background_color: "#1a1210"
+      color: "#ece2d0"
 
 extra_css:
   - stylesheets/extra.css
