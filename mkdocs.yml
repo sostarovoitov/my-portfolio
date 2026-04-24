@@ -140,7 +140,7 @@ plugins:
       puml_url: https://www.plantuml.com/plantuml/
       theme:
           enabled: false
-  - social:
+  - social
 
 extra_css:
   - stylesheets/extra.css
