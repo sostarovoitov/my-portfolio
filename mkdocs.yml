@@ -1,5 +1,6 @@
 site_name: Документационный портал # Название сайта (уточнить)
 site_description: Портал с инструкциями и справочными материалами # Описание сайта, добавляется в meta-теги (уточнить)
+site_url: https://sostarovoitov.github.io/my-portfolio/
 copyright: Copyright © 2026
 repo_url: https://github.com/sostarovoitov/my-portfolio
 repo_name: sostarovoitov/my-portfolio
