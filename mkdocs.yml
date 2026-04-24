@@ -1,11 +1,16 @@
 site_name: Документационный портал # Название сайта (уточнить)
 site_description: Портал с инструкциями и справочными материалами # Описание сайта, добавляется в meta-теги (уточнить)
 copyright: Copyright © 2026
+repo_url: https://github.com/sostarovoitov/my-portfolio
+repo_name: sostarovoitov/my-portfolio
+
 
 theme: # Тема сайта, информация о ее параметрах
   name: material # Название темы
   logo: images/logo.svg # Ссылка на логотип сайта, логотип добавляется в папку `docs/images`
-  favicon: images/logo.svg # Иконка сайта на вкладке браузера (уточнить)
+  favicon: images/logo.svg # Иконка сайта на вкладке браузера (возможно поменять)
+  icon:
+    repo: fontawesome/brands/github-alt
   font:
     text: Lora # Шрифт текста
     code: Montserrat # Шрифт для текста кода (формально). У меня используется для заголовков
@@ -41,24 +46,35 @@ theme: # Тема сайта, информация о ее параметрах
     #- navigation.tabs.sticky # Фиксация верхнего меню
     #- navigation.expand # Разворачивает спойлеры в левом меню по умолчанию
     #- toc.integrate # Фиксирует оглавление страницы в левом меню
+    - toc.follow  # Автопрокрутка оглавления
+    - navigation.tracking  # Отслеживание активного раздела
     - navigation.instant # Функция быстрой загрузки страниц
+    - navigation.instant.prefetch # Функция предзагрузки страниц при наведении
+    #- navigation.instant.progress #Прогресс бар загрузки страницы
     - navigation.top # Добавляет кнопку «к началу» для быстрой обратной прокрутки страницы
     - search.suggest # Подсказки при вводе поискового запроса
     - search.highlight # Подсветка результатов поиска в тексте страницы
     - content.code.copy # Кнопка копирования в блоке кода
-
+    - content.code.annotate  # Позволяет добавлять пояснения к строкам кода прямо в блоке
+    - content.tabs.link # Связывает переключение вкладок контента. Если юзер выбрал "macOS" в одном месте, все остальные табы на странице тоже переключатся на "macOS".
+    
 nav: # Структура сайта
 - Главная страница: index.md
 - Руководства по работе с LLM:
   - Instructions/LLMs/index.md
-  - Методика ведения чата с LLM: Instructions/LLMs/LLM-general-instruction.md
-  - Формирование первичного промпта: Instructions/LLMs/prompt-template.md
-  - Улучшение первичного промпта: Instructions/LLMs/meta-prompts.md
-  - Оценка качества результата: Instructions/LLMs/QA.md
-  - Техники улучшения результата: Instructions/LLMs/quality-improvement-technics.md
-  - Техника смены темы: Instructions/LLMs/pivot.md
-  - Формирование саммари: Instructions/LLMs/summary.md
-  - Оценка качества саммари: Instructions/LLMs/summary-QA.md
+  - Ведение диалогов с LLM:
+    - Методика ведения чата с LLM: Instructions/LLMs/LLM-general-instruction.md
+    - Формирование первичного промпта: Instructions/LLMs/prompt-template.md
+    - Улучшение первичного промпта: Instructions/LLMs/meta-prompts.md
+    - Оценка качества результата: Instructions/LLMs/QA.md
+    - Техники улучшения результата: Instructions/LLMs/quality-improvement-technics.md
+    - Техника смены темы: Instructions/LLMs/pivot.md
+    - Формирование саммари: Instructions/LLMs/summary.md
+    - Оценка качества саммари: Instructions/LLMs/summary-QA.md
+  - Ведение базы диалогов:
+    - Структура базы диалогов: Instructions/LLMs/knowledge-structure.md
+    - Создание базы в Notion: Instructions/LLMs/knowledge-notion.md
+    - Работа с базой диалогов: Instructions/LLMs/knowledge-registry.md
 - Руководства по Desktop-приложению Telegram:
   - Instructions/Telegram/index.md
   - Управление кэшем Telegram: Instructions/Telegram/sostarovoitov-instruction.md
@@ -75,6 +91,7 @@ markdown_extensions: # Расширения markdown
   - attr_list # Использование html-атрибутов и CSS в элементах markdown
   - md_in_html # Поддержка markdown внутри html
   - def_list # Поддержка списков определений
+  - tables # Поддержка таблиц
   - pymdownx.mark  # Для выделения текста ==вот так==
   - pymdownx.caret # Для подчеркивания ^^вот так^^ и надстрочных знаков
   - pymdownx.blocks.caption #для подписей под рисунками (тестить)
@@ -84,10 +101,17 @@ markdown_extensions: # Расширения markdown
   - pymdownx.tabbed: # Использование вкладок (табов)
       alternate_style: true
   - pymdownx.details # Использование спойлеров (катов)
+  - pymdownx.tilde  # ~~Зачеркивание~~
   - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
       anchor_linenums: true
+      line_spans: __span  # CSS-классы для строк
+      pygments_lang_class: true  # Классы языков
   - pymdownx.inlinehilite # Подсветка синтексиса кода внутри текста (inline code)
   - pymdownx.superfences # Поддержка вложенных блоков кода
+  - pymdownx.keys  # Клавиши (++ctrl+alt+del++)
+  - pymdownx.smartsymbols # Умная замена символов
+  - pymdownx.betterem:  # Умное выделение (**bold**, _italic_)
+      smart_enable: all
   - pymdownx.emoji: # Иконки и эмодзи
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg  
@@ -96,6 +120,8 @@ markdown_extensions: # Расширения markdown
         - docs
   - toc:
       permalink: "#" # Возможно исправить на другой символ
+      slugify: !!python/name:pymdownx.slugs.uslugify # Алгоритм генерации якорей для заголовков
+      toc_depth: 5 # Количество показыаемых уровней вложенности заголовков в меню слева
 
 plugins:
   - search: # Плагин поиска, адаптированный под русскоязычный контент
@@ -113,12 +139,18 @@ plugins:
       puml_url: https://www.plantuml.com/plantuml/
       theme:
           enabled: false
+  - social:
+      cards_layout: default/accent
 
 extra_css:
   - stylesheets/extra.css
 
 extra:
   generator: false
+  status:
+    new: Новинка
+    deprecated: Устарело
   social:
     - icon: fontawesome/brands/telegram
-      link: https://t.me/starovoitov_so
+      link: https://t.me/user
+      name: Sergey on Telegram

@@ -2,6 +2,8 @@
 
 Раздел содержит практические руководства по эффективному взаимодействию с языковыми моделями.
 
+## Ведение диалогов с LLM
+
 <div class="grid cards" markdown>
 
 -   :material-clipboard-list: __[Методика ведения чата с LLM](LLM-general-instruction.md)__
@@ -42,6 +44,27 @@
 -   :material-playlist-check: __[Оценка качества саммари](summary-QA.md)__
 
     ---
-    Чек-лист для оценки саммари перед 
+    Чек-лист для оценки саммари
+
+</div>
+
+## Ведение базы диалогов
+
+<div class="grid cards" markdown>
+
+-   :material-database-outline: __[Структура базы диалогов](knowledge-structure.md)__
+
+    ---
+    Назначение базы диалогов и описание предлагаемой структуры таблиц
+
+-   :material-notebook-plus-outline: __[Создание базы в Notion](knowledge-notion.md)__
+
+    ---
+    Пошаговая инструкция по созданию таблиц базы на примере Notion
+
+-   :material-table-edit: __[Работа с базой диалогов](knowledge-registry.md)__
+
+    ---
+    Порядок работы с таблицами и хранение текстов диалогов
 
 </div>
