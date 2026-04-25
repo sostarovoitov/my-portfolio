@@ -57,6 +57,7 @@ theme: # Тема сайта, информация о ее параметрах
     - search.highlight # Подсветка результатов поиска в тексте страницы
     - content.code.copy # Кнопка копирования в блоке кода
     - content.code.annotate  # Позволяет добавлять пояснения к строкам кода прямо в блоке
+    - content.code.select # 
     - content.tabs.link # Связывает переключение вкладок контента. Если юзер выбрал "macOS" в одном месте, все остальные табы на странице тоже переключатся на "macOS".
     
 nav: # Структура сайта
@@ -95,7 +96,7 @@ markdown_extensions: # Расширения markdown
   - tables # Поддержка таблиц
   - pymdownx.mark  # Для выделения текста ==вот так==
   - pymdownx.caret # Для подчеркивания ^^вот так^^ и надстрочных знаков
-  - pymdownx.blocks.caption #для подписей под рисунками (тестить)
+  - pymdownx.blocks.caption #Для подписей под рисунками (самый оптимальный способ)
   - pymdownx.tasklist:        # Для использования чек-боксов
       custom_checkbox: true   # Делает чек-боксы красивыми (в стиле Material)
       clickable_checkbox: true # Делает чек-боксы кликабельными
@@ -140,10 +141,7 @@ plugins:
       puml_url: https://www.plantuml.com/plantuml/
       theme:
           enabled: false
-  - social:
-    cards_layout_options:
-      background_color: "#1a1210"
-      color: "#ece2d0"
+  - social
 
 extra_css:
   - stylesheets/extra.css
