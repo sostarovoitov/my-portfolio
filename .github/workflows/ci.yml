@@ -23,5 +23,5 @@ jobs:
       - run: pip install mkdocs-redoc-tag
       - run: pip install mkdocs_puml
       - run: pip install pillow cairosvg
-      - run: pip install mkdocs-git-revision-date-localized
+      - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: mkdocs gh-deploy --force
