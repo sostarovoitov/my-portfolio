@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: 3.x
       - uses: actions/cache@v4
         with:
           key: ${{ github.ref }}
@@ -23,5 +23,5 @@ jobs:
       - run: pip install mkdocs-redoc-tag
       - run: pip install mkdocs_puml
       - run: pip install pillow cairosvg
-      - run: pip install git-revision-date-localized
+      - run: pip install mkdocs-git-revision-date-localized
       - run: mkdocs gh-deploy --force
