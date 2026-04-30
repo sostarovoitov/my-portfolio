@@ -121,7 +121,7 @@ html, body, [data-md-color-scheme="myscheme"] {
 ::-webkit-scrollbar-thumb {
   background-color: #a1887f !important; /* Цвет бегунка */
   border-radius: 20px;                 /* Скругление */
-  border: 2px solid #f5f2ed;           /* Отступ цветом вашего фона (создает эффект парения) */
+  border: 2px solid #f5f2ed;          /* Отступ цветом вашего фона (создает эффект парения) */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -172,6 +172,33 @@ html, body, [data-md-color-scheme="myscheme"] {
 
 [data-md-color-scheme="myscheme"] .md-typeset table:not([class]) tbody tr:last-child td {
   border-bottom: none;
+}
+
+/* 11. Скроллбар в левом меню — светлая тема */
+
+[data-md-color-scheme="myscheme"] .md-sidebar__scrollwrap::-webkit-scrollbar {
+  width: 10px;
+}
+
+[data-md-color-scheme="myscheme"] .md-sidebar__scrollwrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[data-md-color-scheme="myscheme"] .md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+  background-color: #a1887f !important;
+  border-radius: 20px;
+  border: 2px solid #f5f2ed;
+  background-clip: border-box;
+}
+
+
+[data-md-color-scheme="myscheme"] .md-sidebar__scrollwrap::-webkit-scrollbar-thumb:hover {
+  background-color: #795548 !important;
+}
+
+[data-md-color-scheme="myscheme"] .md-sidebar__scrollwrap {
+  scrollbar-color: #a1887f transparent;
+  scrollbar-width: thin;
 }
 
 
@@ -303,7 +330,7 @@ html, body, [data-md-color-scheme="slate"] {
 }
 
 /* ==========================================================
-   10. ТЕМНАЯ ТЕМА
+   10. ТАБЛИЦЫ
    ========================================================== */
 
 [data-md-color-scheme="slate"] .md-typeset table:not([class]) {

@@ -12,7 +12,7 @@
     ---
     Инструкции по работе с Desktop-приложением Telegram
 
--   :material-note-outline: __[Руководства по Нотсапп](Instructions/Notesapp/index.md)__
+-   :material-note-outline: __[Документация к Нотсапп](Instructions/Notesapp/index.md)__
 
     ---
     Use case и API-документация к прототипу приложения Нотсапп
