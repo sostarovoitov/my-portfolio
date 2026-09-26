@@ -57,7 +57,7 @@ theme: # Тема сайта, информация о ее параметрах
     - search.highlight # Подсветка результатов поиска в тексте страницы
     - content.code.copy # Кнопка копирования в блоке кода
     - content.code.annotate  # Позволяет добавлять пояснения к строкам кода прямо в блоке
-    - content.code.select # 
+    - content.code.select #
     - content.tabs.link # Связывает переключение вкладок контента. Если юзер выбрал "macOS" в одном месте, все остальные табы на странице тоже переключатся на "macOS".
     
 nav: # Структура сайта
@@ -77,6 +77,7 @@ nav: # Структура сайта
     - Структура базы диалогов: Instructions/LLMs/knowledge-structure.md
     - Создание базы в Notion: Instructions/LLMs/knowledge-notion.md
     - Работа с базой диалогов: Instructions/LLMs/knowledge-registry.md
+    - Альтернативный способ классификации : Instructions/LLMs/alternative-approach.md
 - Руководства по работе с Telegram:
   - Instructions/Telegram/index.md
   - Управление кэшем Telegram: Instructions/Telegram/sostarovoitov-instruction.md
