@@ -1,0 +1,6 @@
+# --8<-- [start:test_snippet]
+
+!!! note "Примечание"
+    Статья написана в рамках курса по Docs-as-Code. Сниппет сформирован с помощью `pymdownx.snippets`
+
+# --8<-- [end:test_snippet]
