@@ -124,7 +124,7 @@ markdown_extensions: # Расширения markdown
           - docs/includes/mkdocs.md
   - toc:
       permalink: "#" # Возможно исправить на другой символ
-      slugify: !!python/name:pymdownx.slugs.uslugify # Алгоритм генерации якорей для заголовков
+      slugify: !!python/name:pymdownx.slugs.unicode_slugify # Алгоритм генерации якорей для заголовков
       toc_depth: 5 # Количество показыаемых уровней вложенности заголовков в меню слева
 
 plugins:
